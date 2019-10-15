@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>คำแนะนำในการปฏิบัติตัว</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-item (click)="openA()" detail>
+    <ion-label class="ion-text-wrap"
+      >คำจำกัดความของโรคอุจจาระร่วงเฉียบพลัน</ion-label
+    >
+  </ion-item>
+  <ion-item (click)="openB()" detail>
+    <ion-label class="ion-text-wrap"
+      >สาเหตุของโรคอุจจาระร่วงเฉียบพลัน</ion-label
+    >
+  </ion-item>
+  <ion-item (click)="openC()" detail>
+    <ion-label class="ion-text-wrap"
+      >วิธีป้องกันโรคอุจจาระร่วงด้วยตัวเอง</ion-label
+    >
+  </ion-item>
+  <ion-item (click)="openD()" detail>
+    <ion-label class="ion-text-wrap">วิธีการใช้และวิธีดื่ม ORS</ion-label>
+  </ion-item>
+  <ion-item (click)="openE()" detail>
+    <ion-label class="ion-text-wrap"
+      >ข้อควรปฏิบัติเมื่อเกิดอุจจาระร่วง</ion-label
+    >
+  </ion-item>
+  <ion-item (click)="openF()" detail>
+    <ion-label class="ion-text-wrap">การใช้ยา Loperamide</ion-label>
+  </ion-item>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

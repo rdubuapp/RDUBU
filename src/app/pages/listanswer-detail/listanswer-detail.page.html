@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="listanswer-admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      รายละเอียดการประเมิน
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <br />
+  <ion-grid>
+    <ion-list *ngFor="let i of items | async; let c = index">
+      <ion-item (click)="findDetail(i.key)" detail>
+        <ion-label class="ion-text-wrap">
+          &nbsp;&nbsp;&nbsp;&nbsp; {{ c + 1 }} )&nbsp; {{ i.key }}
+          <br />
+          <!-- {{ i.payload.node_value_ }} -->
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+
+  
+
+
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

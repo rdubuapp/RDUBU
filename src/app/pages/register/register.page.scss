@@ -1,0 +1,53 @@
+ion-toolbar {
+  --min-height: 100px;
+  --color: white;
+  --background: url("../../../assets/bg/bg.jpg") no-repeat center center / cover;
+}
+ion-content {
+  --background: url("../../../assets/bg/bg4.png") no-repeat center center /
+    cover;
+}
+ion-title {
+  font-family: "Mitr", sans-serif;
+  font-size: 98%;
+}
+ion-button {
+  --background: #f8ce68;
+}
+ion-img {
+  height: 64px;
+  width: 64px;
+  margin: 0 auto;
+  display: block;
+}
+ion-card {
+  --background: white;
+  box-shadow: 0px 0px 10px gray;
+  border: 2px solid gray;
+  max-height: 100%;
+  height: 85%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 15%;
+  overflow: hidden;
+}
+ion-text {
+  font-weight: bold;
+  font-family: "Mitr", sans-serif;
+  font-size: 1rem;
+}
+.footer {
+  position: fixed;
+  text-align: right;
+  bottom: 0px;
+  right: 5%;
+  width: 100%;
+  font-size: 1.8rem;
+  font-family: "Lilita One", cursive;
+  font-weight: 900;
+  text-shadow: #fc0 1px 0 30px;
+  // color: coral;
+  background-image: url("../../../assets/bg/bg.jpg");
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}

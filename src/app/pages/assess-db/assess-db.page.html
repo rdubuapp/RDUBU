@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ประเมินอาการอุจจาระร่วง</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="assess-cb"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text style="font-weight: bold; font-size: 1.5rem;"
+          >ประเมินภาวะการสูญเสียน้ำ</ion-text
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="ion-text-wrap"
+            >ไม่อ่อนเพลีย, ไม่กระหายน้ำ</ion-label
+          >
+          <ion-checkbox [(ngModel)]="A" [disabled]="B"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap"
+            >มีอาการอ่อนเพลีย, ถ่ายแต่ละครั้งมีปริมาณมาก</ion-label
+          >
+          <ion-checkbox [(ngModel)]="B" [disabled]="A"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">มีภาวะปลายมือ ปลายเท้าซีด</ion-label>
+          <ion-checkbox [(ngModel)]="C" [disabled]="D"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap"
+            >ไม่มีภาวะปลายมือ ปลายเท้าซีด</ion-label
+          >
+          <ion-checkbox [(ngModel)]="D" [disabled]="C"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-text-right">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="clickOK()" shape="round">ตกลง</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

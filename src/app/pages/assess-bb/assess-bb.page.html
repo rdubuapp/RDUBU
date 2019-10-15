@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="assess-a"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ประเมินอาการอุจจาระร่วง</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text style="font-weight: bold; font-size: 1.5rem;">
+          อาการแสดงเด่น
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <br />
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="clickVomit()" shape="round">
+          อาเจียนเด่น
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="clickDiarrhea()" shape="round">
+          อุจจาระร่วงเด่น
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

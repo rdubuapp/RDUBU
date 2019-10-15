@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="assess-cb"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ประเมินอาการอุจจาระร่วง</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text style="font-weight:bold;font-size: 1.5rem;">
+          อาการผู้ป่วย
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <br />
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          มีสาเหตุการเกิดอุจจาระร่วงจากการเดินทาง
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          (click)="clickYes()"
+          shape="round"
+          style="--background: #f8ce68;"
+          >ใช่</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          (click)="clickNo()"
+          shape="round"
+          style="--background: #f58c6c;"
+          >ไม่ใช่</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

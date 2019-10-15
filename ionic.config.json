@@ -1,0 +1,7 @@
+{
+  "name": "RDUBU",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

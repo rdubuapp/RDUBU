@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-wrap>ประเมินอาการอุจจาระร่วง</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="assess-da"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-card text-center>
+    <ion-card-header>
+      <ion-chip>
+        <ion-avatar>
+          <img src="assets/icon/doctor.png" />
+        </ion-avatar>
+        <ion-label>ประเมินอาการอุจจาระร่วง</ion-label>
+      </ion-chip>
+      <ion-card-subtitle>
+        ผลการประเมินภาวะการสูญเสียน้ำ
+      </ion-card-subtitle>
+      <ion-card-title>
+        รุนแรงปานกลาง
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ไม่จำเป็นต้องใช้ยา Antibiotics
+      <br />
+      - ป้องกันการรักษาภาวะขาดน้ำและเกลือแร่ด้วย ORS
+      <br />
+      - รักษาตามอาการ
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid text-right>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="clickHome()" shape="round"
+          >กลับสู่หน้าหลัก</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

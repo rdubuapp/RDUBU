@@ -1,0 +1,13 @@
+ion-toolbar {
+  --min-height: 100px;
+  --color: white;
+  --background: url("../../../assets/bg/bg.jpg") no-repeat center center / cover;
+}
+ion-content {
+  --background: url("../../../assets/bg/bg4.png") no-repeat center center /
+    cover;
+}
+ion-title {
+  font-family: "Mitr", sans-serif;
+  font-size: 98%;
+}

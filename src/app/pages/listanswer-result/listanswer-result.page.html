@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="listanswer-detail"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ผลลัพธ์การประเมิน</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+
+  <!-- <ion-grid>
+    <ion-list *ngFor="let i of item | async">
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          {{ i.key }}:
+          {{ i.payload.node_.value_ }}
+          <br />
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-grid> -->
+
+  <ion-grid>
+    <ion-row *ngFor="let i of item | async">
+      <ion-col>
+        <ion-item lines="none"  class="a">
+          <ion-label class="ion-text-wrap"> {{ i.key }} : </ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item lines="none"  class="b">
+          <ion-label class="ion-text-wrap">
+            {{ i.payload.node_.value_ }}
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="footer">RDUBU</div>
+</ion-content>

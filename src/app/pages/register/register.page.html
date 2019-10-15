@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      อุจาระร่วงเฉียบพลันในผู้ใหญ่
+      <br />
+      Acute Diarrhea in Adult
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        เนื่องจากในปัจจุบันปัญหาการใช้ยาปฏิชีวนะมากเกินความจำเป็นในโรคอุจจาระร่วงเฉียบพลันอาจส่งผลทำให้เกิดปัญหาเชื้อดื้อยาได้ในอนาคต
+        ดังนั้นจึงควรพิจารณาการใช้ยาปฏิชีวนะอย่างเหมาะสมเพื่อป้องกันอันตรายจากยาและความเสี่ยงในการเกิดเชื้อดื้อยาในอนาคต
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center" (click)="clickLogin()">
+          <ion-card-header><ion-text>ผู้ดูแล</ion-text></ion-card-header>
+  
+          <ion-img src="assets/icon/doctor.png" ></ion-img>
+          <ion-card-content>
+            <!-- <ion-button id="but" class="ion-text-wrap" (click)="clickLogin()" expand="block">
+              ผู้ดูแล
+            </ion-button> -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+          <ion-card class="ion-text-center" (click)="clickUser()">
+            <ion-card-header><ion-text>ผู้รับบริการ</ion-text></ion-card-header>
+
+            <ion-img src="assets/icon/user.png"></ion-img>
+            <ion-card-content>
+              <!-- <ion-button id="but" class="ion-text-wrap" (click)="clickUser()" expand="block">
+                ผู้รับบริการ
+              </ion-button> -->
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>

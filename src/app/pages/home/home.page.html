@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="register"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      อุจาระร่วงเฉียบพลันในผู้ใหญ่
+      <br />
+      (Acute Diarrhea in Adult)
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <br />
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="openAssess()" class="ion-text-center">
+          <br />
+          <ion-img src="assets/icon/doc2.png"></ion-img>
+          <ion-card-content>
+            <div>ประเมินอาการ<br />อุจาระร่วง</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="openInfo()" class="ion-text-center">
+          <br />
+          <ion-img src="assets/icon/bag2.png"></ion-img>
+          <ion-card-content>
+            <div>คำแนะนำ <br />ในการปฏิบัติตัว</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <br />
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="openSuggest()" class="ion-text-center">
+          <br />
+          <ion-img src="assets/icon/choice3.png"></ion-img>
+          <ion-card-content>
+            <div>ข้อเสนอแนะ<br />และความพึงพอใจ</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="openAbout()" class="ion-text-center">
+          <br />
+          <ion-img src="assets/icon/head2.png"></ion-img>
+          <ion-card-content>
+            <div>เกี่ยวกับผู้จัดทำ<br /></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br />
+  <div class="footer">RDUBU</div>
+</ion-content>
