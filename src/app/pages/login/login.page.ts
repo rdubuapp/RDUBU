@@ -74,7 +74,8 @@ export class LoginPage implements OnInit {
         if(username =="admin"){
           this.users= username + '@wombat.com';
         } else {
-          this.users= username + '@gmail.com';
+          // this.users= username + '@gmail.com';
+          this.users= username;
         }
       this.afAuth.auth.signInWithEmailAndPassword(this.users, password).then((res) => {
         this.db.database.ref(`user/${res.user.uid}/profile`).update({token:res.user.refreshToken});
