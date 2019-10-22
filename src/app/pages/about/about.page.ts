@@ -20,5 +20,4 @@ export class AboutPage implements OnInit {
       event.target.complete();
     }, 2000);
   }
-
 }
