@@ -47,26 +47,7 @@ export class MenuadminPage implements OnInit {
     // console.log(error)
     // // An error happened
     // });
-  // var confirm = confirm("Do you want logout?");
-  // if(confirm){   
-  //     this.afAuth.auth.signOut();
-  //     let toast =   toastController.create({
-  //           message: "Logout complete.",
-  //           duration: 2000,
-  //           position: 'bottom'
-  //       });
-  //       (await (toast)).present();
-  //     this.navController.navigateRoot('register');
-  // } else {
-  //   let toast =   toastController.create({
-  //           message: "Cancel logout.",
-  //           duration: 2000,
-  //           position: 'bottom'
-  //       });
-  //       (await (toast)).present();
-        
-  // }
-  // }
+
   const alert = await this.alertController.create({
     header: 'Confirm!',
     message: 'Do you want to sign out?',
@@ -85,7 +66,7 @@ export class MenuadminPage implements OnInit {
         (await (toast)).present();
         }
       }, {
-        text: 'Okay',
+        text: 'Confirm',
         handler: async () => {
           console.log('Confirm Okay');
           this.afAuth.auth.signOut();
