@@ -12,10 +12,10 @@ import { toastController } from '@ionic/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  username = '';
-  users ='';
-  password = '';
-  error :any;
+  username :string = '';
+  users :string ='';
+  password :string = '';
+  error :string ;
   
   constructor(public afAuth: AngularFireAuth, public user: UserService, private navController: NavController, private db: AngularFireDatabase,private toastController: ToastController) { 
 
@@ -74,21 +74,11 @@ export class LoginPage implements OnInit {
         if(username =="admin"){
           this.users= username + '@wombat.com';
         } else {
-          // this.users= username + '@gmail.com';
           this.users= username;
         }
       this.afAuth.auth.signInWithEmailAndPassword(this.users, password).then((res) => {
         this.db.database.ref(`user/${res.user.uid}/profile`).update({token:res.user.refreshToken});
-
-        // var status = this.db.object(`users/${res.user.uid}/status`).valueChanges();
-        // status.subscribe(data => {
-        //   console.log(data);
-        //   if(data == "admin"){
-        //     this.router.navigate(['adminPage']);
-        //   }else if (data == "staff"){
-        //     this.router.navigate(['staffPage']);
-        //   }
-        //});
+          this.navController.navigateForward('menuadmin');
         }).catch(async function(error) {
         // Handle Errors here.
         var errorCode = error.code;

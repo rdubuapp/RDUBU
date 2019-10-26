@@ -11,8 +11,8 @@ import { Network } from '@ionic-native/network/ngx';
 })
 export class TermsOfUsePage implements OnInit {
 
-  public checked = false;
-  public term = '';
+  public checked :boolean = false;
+  public term :string = '';
 
   constructor(private navController: NavController, private storage: Storage, private network: Network) { }
 

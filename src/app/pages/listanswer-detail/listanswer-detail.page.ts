@@ -14,10 +14,9 @@ import { map } from 'rxjs/operators';
 })
 export class ListanswerDetailPage implements OnInit {
 
-  dataa: any;
-  datas: any;
+  dataa: string;
+  datas: string;
   item: Observable<any>;
-  keys: any;
   key: Array<Observable<any>>;
 
   test: Observable<any>;

@@ -14,7 +14,7 @@ export class MenuadminPage implements OnInit {
     { title: 'Profile', url: '/menuadmin/profile', icon: 'logo-ionitron'}
   ];
 
-  selectedPath = '';
+  // selectedPath = '';
 
   constructor(private navController: NavController, private router: Router) { }
 

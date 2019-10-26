@@ -14,7 +14,6 @@ import { ListanswerDetailPage } from '../listanswer-detail/listanswer-detail.pag
 })
 export class ListanswerAdminPage implements OnInit {
 
-  i = '';
   items: Array<Observable<any>>;
   item: Observable<any>;
   item2: Observable<any>;
@@ -26,7 +25,6 @@ export class ListanswerAdminPage implements OnInit {
   lv: Observable<any>;
 
   result: Observable<any>;
-  k;
 
   constructor(private db: AngularFireDatabase, private navCtrl: NavController, private router: Router) {
 
@@ -46,27 +44,6 @@ export class ListanswerAdminPage implements OnInit {
     //   console.log(data)
     // );
     this.ls = this.db.list(`Questionnaire/`).snapshotChanges();
-    // this.ls.subscribe(actions =>
-    //   actions.forEach(action => {
-    //     console.log(action.type);
-    //     console.log(action.key);
-    //     console.log(action.payload.val());
-    //   })
-    // );
-    // this.d = this.db.list(`Questionnaire/2019-10-09`).snapshotChanges();
-    // this.d.subscribe(actions =>
-    //   actions.forEach(action => {
-    //     console.log(action.type);
-    //     console.log(action.key);
-    //     console.log(action.payload.val().result);
-    //     console.log(action.payload.val().time);
-    //   })
-    //   );
-    // this.lv = this.db.list(`Questionnaire/`).valueChanges();
-    // this.lv.subscribe(data =>
-    //   console.log(data)
-    // );
-
   }
 
   ngOnInit() {

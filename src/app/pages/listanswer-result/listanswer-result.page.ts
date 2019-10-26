@@ -12,12 +12,12 @@ import { NavController, NavParams } from '@ionic/angular';
   styleUrls: ['./listanswer-result.page.scss'],
 })
 export class ListanswerResultPage implements OnInit {
-  dataa: any;
-  datas: any;
+  dataa: string;
+  datas: string;
   item: Observable<any>;
-  keys: any;
+  keys: string;
   answer = {} as Answer;
-  result: any;
+  result: string;
   items: Observable<any>;
 
   constructor(private db: AngularFireDatabase, private route: ActivatedRoute, private router: Router, public navCtrl: NavController) {
@@ -31,27 +31,6 @@ export class ListanswerResultPage implements OnInit {
         console.log(data);
         this.result = data;
         // console.log(JSON.stringify(data));
-
-        //   this.mProduct.barcode = item["barcode"];
-        //   this.mProduct.name = item["name"];
-        //   this.mProduct.brand = item["brand"];
-        //   this.mProduct.package = item["package"];
-        //   this.mProduct.cost = item["cost"];
-        //   this.mProduct.priceperunit = item["priceperunit"];
-        //   this.mProduct.qty = item["qty"];
-        //   this.mProduct.imageUrl = item["imageUrl"];
-        //   this.mProduct.imageName = item["imageName"];
-        //   this.mLastImageName = this.mProduct.imageName;
-        // this.items = data;
-        // console.log(this.items)
-        // data.forEach(element => {
-        //     console.log(element)
-        //     this.answer.result=element.payload.val();
-        //     console.log(this.answer.result)
-        // this.keys=element.key
-        // console.log(this.keys)
-        // });
-        // console.log(this.answer.result)
       });
     });
 

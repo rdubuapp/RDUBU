@@ -12,10 +12,10 @@ import { Answer } from 'src/app/model/answer';
 })
 export class AssessDbPage implements OnInit {
 
-  public A = false;
-  public B = false;
-  public C = false;
-  public D = false;
+  public A :boolean = false;
+  public B :boolean = false;
+  public C :boolean = false;
+  public D :boolean = false;
   answer: Answer = new Answer();
 
   constructor(private navController: NavController, private db: AngularFireDatabase) { }

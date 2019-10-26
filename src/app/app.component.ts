@@ -16,8 +16,8 @@ import { take } from 'rxjs/operators';
 })
 export class AppComponent {
 
-  termL = '';
-  termI = '';
+  termL:string = '';
+  termI :string = '';
 
   loading: any;
   loadingF: any;
