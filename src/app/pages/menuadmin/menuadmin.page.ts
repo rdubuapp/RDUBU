@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController, AlertController } from '@ionic/angular';
 import { Router, RouterEvent } from '@angular/router';
-
+import { AngularFireAuth } from '@angular/fire/auth';
+import { toastController } from '@ionic/core';
+import { async } from '@angular/core/testing';
 @Component({
   selector: 'app-menuadmin',
   templateUrl: './menuadmin.page.html',
@@ -11,12 +13,12 @@ export class MenuadminPage implements OnInit {
 
   pages = [
     { title: 'Menu', url: '/menuadmin/admin', icon: 'home'},
-    { title: 'Profile', url: '/menuadmin/profile', icon: 'logo-ionitron'}
+    // { title: 'Profile', url: '/menuadmin/profile', icon: 'logo-ionitron'}
   ];
 
-  // selectedPath = '';
+  selectedPath :string = '';
 
-  constructor(private navController: NavController, private router: Router) { }
+  constructor(public afAuth: AngularFireAuth,private navController: NavController, private router: Router,private toastController: ToastController,public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -37,7 +39,70 @@ export class MenuadminPage implements OnInit {
     this.navController.navigateForward('listanswer-admin');
   }
 
-  logout() {
-    this.navController.navigateRoot('register');
-  }
+  async logout() {
+    // this.afAuth.auth.signOut().then(function() {
+    //   this.navController.navigateForward('register');
+    // // Sign-out successful.
+    // }).catch(function(error) {
+    // console.log(error)
+    // // An error happened
+    // });
+  // var confirm = confirm("Do you want logout?");
+  // if(confirm){   
+  //     this.afAuth.auth.signOut();
+  //     let toast =   toastController.create({
+  //           message: "Logout complete.",
+  //           duration: 2000,
+  //           position: 'bottom'
+  //       });
+  //       (await (toast)).present();
+  //     this.navController.navigateRoot('register');
+  // } else {
+  //   let toast =   toastController.create({
+  //           message: "Cancel logout.",
+  //           duration: 2000,
+  //           position: 'bottom'
+  //       });
+  //       (await (toast)).present();
+        
+  // }
+  // }
+  const alert = await this.alertController.create({
+    header: 'Confirm!',
+    message: 'Do you want to sign out?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: async (blah) => {
+          console.log('Confirm Cancel');
+            let toast =   toastController.create({
+            message: "Cancel logout.",
+            duration: 2000,
+            position: 'bottom'
+        });
+        (await (toast)).present();
+        }
+      }, {
+        text: 'Okay',
+        handler: async () => {
+          console.log('Confirm Okay');
+          this.afAuth.auth.signOut();
+      let toast =   toastController.create({
+            message: "Logout complete.",
+            duration: 2000,
+            position: 'bottom'
+        });
+        (await (toast)).present();
+      this.navController.navigateRoot('register');
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+  let result = await alert.onDidDismiss();
+  console.log(result);
+}
 }
