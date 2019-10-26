@@ -18,14 +18,6 @@ export class RegisterPage implements OnInit {
   }
 
   ngOnInit() {
-    this.network.onDisconnect().subscribe(() => {
-      console.log('network was disconnected :-(');
-      this.disconnectedToast();
-    });
-    this.network.onConnect().subscribe(() => {
-      console.log('network was disconnected :-(');
-      this.connectedToast();
-    });
   }
 
   doRefresh(event) {
@@ -43,30 +35,6 @@ export class RegisterPage implements OnInit {
 
   clickLogin() {
     this.navController.navigateForward('login');
-  }
-
-  // loading() {
-  //   let time = 3000;
-  //   setTimeout(function() {
-  //     this.navController.navigateForward('login');
-  //     time = 0;
-  //   }, time);
-  // }
-
-  async disconnectedToast() {
-    const toast = await this.toastController.create({
-      message: 'network was disconnected :-(',
-      duration: 2000
-    });
-    toast.present();
-  }
-
-  async connectedToast() {
-    const toast = await this.toastController.create({
-      message: 'we got a wifi connection, woohoo!',
-      duration: 2000
-    });
-    toast.present();
   }
 
 }
