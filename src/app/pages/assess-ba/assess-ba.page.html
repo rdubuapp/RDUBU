@@ -11,16 +11,31 @@
   <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher> -->
-  <ion-card class="ion-text-center">
+  <!-- <ion-card class="ion-text-center">
     <br />
     <ion-card-content>
       แนะนำให้ผู้รับบริการไปพบแพทย์ใกล้บ้านทันที เพื่อหาสาเหตุที่ชัดเจน
     </ion-card-content>
     <br />
-  </ion-card>
+  </ion-card> -->
 
-  <ion-grid class="ion-text-right">
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <ion-text>
+          แนะนำให้ผู้รับบริการไปพบแพทย์ใกล้บ้านทันที เพื่อหาสาเหตุที่ชัดเจน
+        </ion-text>
+      </ion-col>
+    </ion-row>
     <ion-row>
+      <ion-col>
+          <ion-img src="assets/icon/doc2.png"></ion-img>
+      </ion-col>
+      <ion-col>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-right">
       <ion-col>
         <ion-button (click)="clickHome()" shape="round">
           กลับสู่หน้าหลัก

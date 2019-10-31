@@ -1,24 +1,33 @@
 ion-toolbar {
-  --min-height: 100px;
+  --min-height: 12vh;
   --color: white;
   --background: url("../../../assets/bg/bg.jpg") no-repeat center center / cover;
+}
+ion-title {
+  font-family: "Mitr", sans-serif;
+  font-size: 3vh;
 }
 ion-content {
   --background: url("../../../assets/bg/bg4.png") no-repeat center center /
     cover;
-}
-ion-title {
-  font-family: "Mitr", sans-serif;
-  font-size: 98%;
+    font-size: 2.5vh;
 }
 ion-button {
   --background: #f8ce68;
+  font-size: 2.5vh;
+}
+ion-text{
+  font-size: 2.5vh;
 }
 ion-img {
-  height: 64px;
-  width: 64px;
+  // height: 64px;
+  // width: 64px;
+  // height: 15vh;
+  width: 20vw;
+  height: auto;
   margin: 0 auto;
   display: block;
+  // background-color: aquamarine;
 }
 ion-card {
   --background: white;
@@ -34,7 +43,10 @@ ion-card {
 ion-text {
   font-weight: bold;
   font-family: "Mitr", sans-serif;
-  font-size: 1rem;
+  // font-size: 1rem;
+}
+ion-col{
+  font-size: 1.1em;
 }
 .footer {
   position: fixed;
@@ -42,11 +54,11 @@ ion-text {
   bottom: 0px;
   right: 5%;
   width: 100%;
-  font-size: 1.8rem;
+  // font-size: 1.8rem;
+  font-size: 4.5vh;
   font-family: "Lilita One", cursive;
   font-weight: 900;
   text-shadow: #fc0 1px 0 30px;
-  // color: coral;
   background-image: url("../../../assets/bg/bg.jpg");
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
