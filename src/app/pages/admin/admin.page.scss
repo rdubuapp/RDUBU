@@ -12,7 +12,8 @@ ion-content {
     cover;
 }
 ion-img {
-  width: 45%;
+  // width: 45%;
+  width: 20vw;
   height: auto;
   margin: 0 auto;
   display: block;
@@ -32,6 +33,8 @@ ion-card {
 }
 ion-card-content {
   font-weight: bold;
+  font-family: "Mitr", sans-serif;
+  font-size: 2.4vh;
 }
 ion-text {
   font-weight: bold;

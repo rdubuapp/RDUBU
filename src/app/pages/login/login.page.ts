@@ -12,12 +12,17 @@ import { toastController } from '@ionic/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  username :string = '';
-  users :string ='';
-  password :string = '';
-  error :string ;
-  
-  constructor(public afAuth: AngularFireAuth, public user: UserService, private navController: NavController, private db: AngularFireDatabase,private toastController: ToastController) { 
+  username = '';
+  users = '';
+  password = '';
+  error: string;
+
+  constructor(
+    public afAuth: AngularFireAuth,
+    public user: UserService,
+    private navController: NavController,
+    private db: AngularFireDatabase,
+    private toastController: ToastController) {
 
   }
 
@@ -45,89 +50,89 @@ export class LoginPage implements OnInit {
     const { username, password } = this;
     // const controller = document.querySelector('ion-toast-controller');
     // try {
-      // kind of a hack. 
-      // const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '@wombat.com', password);
+    // kind of a hack. 
+    // const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '@wombat.com', password);
 
-      // if (res.user) {
-      //   this.user.setUser({
-      //     username,
-      //     uid: res.user.uid
-      //   });
-      //   this.navController.navigateForward('menuadmin');
-      // }
+    // if (res.user) {
+    //   this.user.setUser({
+    //     username,
+    //     uid: res.user.uid
+    //   });
+    //   this.navController.navigateForward('menuadmin');
+    // }
 
-      if(username == ""){
-        let toast =   toastController.create({
-          message: 'Please insert username.',
-          duration: 2000,
-          position: 'bottom'
+    if (username === '') {
+      const toast = toastController.create({
+        message: 'Please insert username.',
+        duration: 2000,
+        position: 'bottom'
       });
       (await toast).present();
-      } else if(password == ""){
-        let toast =   toastController.create({
-          message: 'Please insert password.',
-          duration: 2000,
-          position: 'bottom'
+    } else if (password === '') {
+      const toast = toastController.create({
+        message: 'Please insert password.',
+        duration: 2000,
+        position: 'bottom'
       });
       (await toast).present();
-      } else{
-        if(username =="admin"){
-          this.users= username + '@wombat.com';
-        } else {
-          this.users= username;
-        }
+    } else {
+      if (username === 'admin') {
+        this.users = username + '@wombat.com';
+      } else {
+        this.users = username;
+      }
       this.afAuth.auth.signInWithEmailAndPassword(this.users, password).then((res) => {
-        this.db.database.ref(`user/${res.user.uid}/profile`).update({token:res.user.refreshToken});
-          this.navController.navigateForward('menuadmin');
-        }).catch(async function(error) {
+        this.db.database.ref(`user/${res.user.uid}/profile`).update({ token: res.user.refreshToken });
+        this.navController.navigateForward('menuadmin');
+      }).catch(async function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        
+        const errorCode = error.code;
+        let errorMessage = error.message;
+
         if (errorCode === 'auth/invalid-email') {
           errorMessage = 'Invalid Email.';
-          let toast =   toastController.create({
+          const toast = toastController.create({
             message: errorMessage,
             duration: 2000,
             position: 'bottom'
-        });
-        (await toast).present();
-        } else if(errorCode === 'auth/invalid-password'){
+          });
+          (await toast).present();
+        } else if (errorCode === 'auth/invalid-password') {
           errorMessage = 'Invalid Password.';
-          let toast =   toastController.create({
+          const toast = toastController.create({
             message: errorMessage,
             duration: 2000,
             position: 'bottom'
-        });
-        (await toast).present();
-        } else if(errorCode === 'auth/user-not-found'){
+          });
+          (await toast).present();
+        } else if (errorCode === 'auth/user-not-found') {
           errorMessage = 'User not found.';
-          let toast =   toastController.create({
+          const toast = toastController.create({
             message: errorMessage,
             duration: 2000,
             position: 'bottom'
-        });
-        (await toast).present();
-        } else if(errorCode === 'auth/wrong-password'){
+          });
+          (await toast).present();
+        } else if (errorCode === 'auth/wrong-password') {
           errorMessage = 'Wrong Password.';
-          let toast =   toastController.create({
+          const toast = toastController.create({
             message: errorMessage,
             duration: 2000,
             position: 'bottom'
-        });
-        (await toast).present();
+          });
+          (await toast).present();
         } else {
-          errorMessage = errorMessage;  
-          let toast =   toastController.create({
+          errorMessage = errorMessage;
+          const toast = toastController.create({
             message: errorMessage,
             duration: 2000,
             position: 'bottom'
-        });
-        (await toast).present();
+          });
+          (await toast).present();
         }
-    }); 
+      });
+    }
+
   }
 
-}
-  
 }

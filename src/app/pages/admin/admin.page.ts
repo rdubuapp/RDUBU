@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { Router, RouterEvent } from '@angular/router';
 
 @Component({
@@ -10,9 +10,13 @@ import { Router, RouterEvent } from '@angular/router';
 })
 export class AdminPage implements OnInit {
 
-  constructor(private navController: NavController, private router: Router) { }
+  constructor(
+    private navController: NavController,
+    private router: Router,
+    public loadingController: LoadingController) { }
 
   ngOnInit() {
+    this.presentLoading();
   }
 
   doRefresh(event) {
@@ -22,6 +26,18 @@ export class AdminPage implements OnInit {
       console.log('Async operation has ended');
       event.target.complete();
     }, 2000);
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Loading',
+      duration: 2000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+
+    console.log('Loading dismissed!');
   }
 
   async openlink() {

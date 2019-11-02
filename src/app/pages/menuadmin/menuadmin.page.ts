@@ -12,13 +12,13 @@ import { async } from '@angular/core/testing';
 export class MenuadminPage implements OnInit {
 
   pages = [
-    { title: 'Menu', url: '/menuadmin/admin', icon: 'home'},
+    { title: 'Menu', url: '/menuadmin/admin', icon: 'home' },
     // { title: 'Profile', url: '/menuadmin/profile', icon: 'logo-ionitron'}
   ];
 
-  selectedPath :string = '';
+  selectedPath: string = '';
 
-  constructor(public afAuth: AngularFireAuth,private navController: NavController, private router: Router,private toastController: ToastController,public alertController: AlertController) { }
+  constructor(public afAuth: AngularFireAuth, private navController: NavController, private router: Router, private toastController: ToastController, public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -35,7 +35,7 @@ export class MenuadminPage implements OnInit {
   async openlink() {
     window.open('https://docs.google.com/forms/d/1WA2J6gJ2o0qFSWTOnOJLY1hqZgzwjXmhIj-Q-ldhun4/edit#responses', '_system', 'location=yes');
   }
-  async openAssess(){
+  async openAssess() {
     this.navController.navigateForward('listanswer-admin');
   }
 
@@ -48,42 +48,42 @@ export class MenuadminPage implements OnInit {
     // // An error happened
     // });
 
-  const alert = await this.alertController.create({
-    header: 'Confirm!',
-    message: 'Do you want to sign out?',
-    buttons: [
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: async (blah) => {
-          console.log('Confirm Cancel');
-            let toast =   toastController.create({
-            message: "Cancel logout.",
-            duration: 2000,
-            position: 'bottom'
-        });
-        (await (toast)).present();
+    const alert = await this.alertController.create({
+      header: 'Confirm!',
+      message: 'Do you want to sign out?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: async (blah) => {
+            console.log('Confirm Cancel');
+            let toast = toastController.create({
+              message: "Cancel logout.",
+              duration: 2000,
+              position: 'bottom'
+            });
+            (await (toast)).present();
+          }
+        }, {
+          text: 'Confirm',
+          handler: async () => {
+            console.log('Confirm Okay');
+            this.afAuth.auth.signOut();
+            let toast = toastController.create({
+              message: "Logout complete.",
+              duration: 2000,
+              position: 'bottom'
+            });
+            (await (toast)).present();
+            this.navController.navigateRoot('register');
+          }
         }
-      }, {
-        text: 'Confirm',
-        handler: async () => {
-          console.log('Confirm Okay');
-          this.afAuth.auth.signOut();
-      let toast =   toastController.create({
-            message: "Logout complete.",
-            duration: 2000,
-            position: 'bottom'
-        });
-        (await (toast)).present();
-      this.navController.navigateRoot('register');
-        }
-      }
-    ]
-  });
+      ]
+    });
 
-  await alert.present();
-  let result = await alert.onDidDismiss();
-  console.log(result);
-}
+    await alert.present();
+    let result = await alert.onDidDismiss();
+    console.log(result);
+  }
 }
