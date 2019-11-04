@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { NavController, LoadingController } from '@ionic/angular';
 import { Router, RouterEvent } from '@angular/router';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +17,7 @@ export class AdminPage implements OnInit {
     public loadingController: LoadingController) { }
 
   ngOnInit() {
-    this.presentLoading();
+    // this.presentLoading();
   }
 
   doRefresh(event) {

@@ -8,6 +8,7 @@ import { Network } from '@ionic-native/network/ngx';
 
 import { timer, Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 @Component({
   selector: 'app-root',
